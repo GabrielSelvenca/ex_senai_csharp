@@ -196,52 +196,73 @@
 
 // 9 
 
-List<string> produtos = new List<string>();
+// List<string> produtos = new List<string>();
 
 
-for (int i = 0; i < 3; i++)
+// for (int i = 0; i < 3; i++)
+// {
+//     Console.Write($"Digite o nome do produto nº {i + 1}: ");
+//     string nomeProduto = Console.ReadLine()!;
+
+//     if (String.IsNullOrWhiteSpace(nomeProduto))
+//     {
+//         Console.WriteLine("\nNome do produto não pode ser nulo ou vazio!\n");
+//         i--;
+//     }
+
+//     produtos.Add(nomeProduto);
+// }
+
+// Console.WriteLine("\nProdutos: ");
+
+// foreach (var produto in produtos)
+// {
+//     Console.WriteLine(produto);
+// }
+
+// Console.Write("\nEscreva o nome de um produto para validar se está na lista: ");
+// string busca = Console.ReadLine()!;
+
+// if (produtos.Contains(busca))
+//     Console.WriteLine("\nProduto existe na lista!\n");
+// else
+//     Console.WriteLine("\nProduto não existe na lista!\n");
+
+// Console.Write("\n\nEscreva o nome de um produto para remover da lista: ");
+// string produtoRemove = Console.ReadLine()!;
+
+// if (produtos.Contains(produtoRemove))
+// {
+//     produtos.Remove(produtoRemove);
+//     Console.WriteLine("\nProduto removido com sucesso!\n");
+// }
+// else
+//     Console.WriteLine("Produto não encontrado para ser removido.");
+
+// Console.WriteLine("\n\nProdutos: ");
+
+// foreach (var produto in produtos)
+// {
+//     Console.WriteLine(produto);
+// }
+
+// 10
+
+List<string> produtos = new List<string>
 {
-    Console.Write($"Digite o nome do produto nº {i + 1}: ");
-    string nomeProduto = Console.ReadLine()!;
+ "Notebook",
+ "Mouse",
+ "Teclado",
+ "Monitor",
+ "Webcam"
+};
 
-    if (String.IsNullOrWhiteSpace(nomeProduto))
-    {
-        Console.WriteLine("\nNome do produto não pode ser nulo ou vazio!\n");
-        i--;
-    }
-
-    produtos.Add(nomeProduto);
-}
-
-Console.WriteLine("\nProdutos: ");
-
-foreach (var produto in produtos)
-{
-    Console.WriteLine(produto);
-}
-
-Console.Write("\nEscreva o nome de um produto para validar se está na lista: ");
+Console.Write("Escreva o nome ou parte do nome de um produto para busca-lo: ");
 string busca = Console.ReadLine()!;
 
-if (produtos.Contains(busca))
-    Console.WriteLine("\nProduto existe na lista!\n");
+string? primeiroProduto = produtos.Find(x => x.Contains(busca, StringComparison.OrdinalIgnoreCase));
+
+if (!String.IsNullOrWhiteSpace(primeiroProduto))
+    Console.WriteLine($"Produto encontrado: {primeiroProduto}");
 else
-    Console.WriteLine("\nProduto não existe na lista!\n");
-
-Console.Write("\n\nEscreva o nome de um produto para remover da lista: ");
-string produtoRemove = Console.ReadLine()!;
-
-if (produtos.Contains(produtoRemove))
-{
-    produtos.Remove(produtoRemove);
-    Console.WriteLine("\nProduto removido com sucesso!\n");
-}
-else
-    Console.WriteLine("Produto não encontrado para ser removido.");
-
-Console.WriteLine("\n\nProdutos: ");
-
-foreach (var produto in produtos)
-{
-    Console.WriteLine(produto);
-}
+    Console.WriteLine("Nenhum produto encontrado.");
