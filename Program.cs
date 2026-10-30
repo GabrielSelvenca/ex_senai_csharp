@@ -166,30 +166,82 @@
 
 // 8
 
-int[] numeros = new int[5];
+// int[] numeros = new int[5];
 
-for (int i = 0; i < numeros.Length; i++)
+// for (int i = 0; i < numeros.Length; i++)
+// {
+//     Console.Write($"Digite um número inteiro: ");
+//     numeros[i] = int.Parse(Console.ReadLine()!);
+// }
+
+// Console.WriteLine("\n\nNúmeros salvos:\n\n");
+
+// foreach (var num in numeros)
+// {
+//     Console.WriteLine(num );
+// }
+
+// int totalPar = 0, maior = 0;
+
+// for (int i = 0; i < numeros.Length; i++)
+// {
+//     if (numeros[i] % 2 == 0)
+//         totalPar++;
+
+//     if(numeros[i] > maior)
+//         maior = numeros[i];
+// }
+
+// Console.WriteLine($"Total de números pares: {totalPar}\nMaior número: {maior}");
+
+// 9 
+
+List<string> produtos = new List<string>();
+
+
+for (int i = 0; i < 3; i++)
 {
-    Console.Write($"Digite um número inteiro: ");
-    numeros[i] = int.Parse(Console.ReadLine()!);
+    Console.Write($"Digite o nome do produto nº {i + 1}: ");
+    string nomeProduto = Console.ReadLine()!;
+
+    if (String.IsNullOrWhiteSpace(nomeProduto))
+    {
+        Console.WriteLine("\nNome do produto não pode ser nulo ou vazio!\n");
+        i--;
+    }
+
+    produtos.Add(nomeProduto);
 }
 
-Console.WriteLine("\n\nNúmeros salvos:\n\n");
+Console.WriteLine("\nProdutos: ");
 
-foreach (var num in numeros)
+foreach (var produto in produtos)
 {
-    Console.WriteLine(num );
+    Console.WriteLine(produto);
 }
 
-int totalPar = 0, maior = 0;
+Console.Write("\nEscreva o nome de um produto para validar se está na lista: ");
+string busca = Console.ReadLine()!;
 
-for (int i = 0; i < numeros.Length; i++)
+if (produtos.Contains(busca))
+    Console.WriteLine("\nProduto existe na lista!\n");
+else
+    Console.WriteLine("\nProduto não existe na lista!\n");
+
+Console.Write("\n\nEscreva o nome de um produto para remover da lista: ");
+string produtoRemove = Console.ReadLine()!;
+
+if (produtos.Contains(produtoRemove))
 {
-    if (numeros[i] % 2 == 0)
-        totalPar++;
-
-    if(numeros[i] > maior)
-        maior = numeros[i];
+    produtos.Remove(produtoRemove);
+    Console.WriteLine("\nProduto removido com sucesso!\n");
 }
+else
+    Console.WriteLine("Produto não encontrado para ser removido.");
 
-Console.WriteLine($"Total de números pares: {totalPar}\nMaior número: {maior}");
+Console.WriteLine("\n\nProdutos: ");
+
+foreach (var produto in produtos)
+{
+    Console.WriteLine(produto);
+}
