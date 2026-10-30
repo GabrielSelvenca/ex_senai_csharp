@@ -141,25 +141,55 @@
 
 // 7
 
-float[] notas = new float[3];
+// float[] notas = new float[3];
 
-for (int i = 0; i < notas.Length; i++)
+// for (int i = 0; i < notas.Length; i++)
+// {
+//     Console.Write($"Escreva a {i+1}ª nota: ");
+//     notas[i] = float.Parse(Console.ReadLine()!);
+// }
+
+// for (int i = 0; i < notas.Length; i++)
+// {
+//     Console.WriteLine(notas[i]);
+// }
+
+// float soma = 0;
+// foreach (float nota in notas)
+// {
+//     soma += nota;
+// }
+
+// double media = Math.Round(soma / notas.Length, 2);
+
+// Console.WriteLine($"Media das notas: {media:F2}");
+
+// 8
+
+int[] numeros = new int[5];
+
+for (int i = 0; i < numeros.Length; i++)
 {
-    Console.Write($"Escreva a {i}ª nota: ");
-    notas[i] = float.Parse(Console.ReadLine()!);
+    Console.Write($"Digite um número inteiro: ");
+    numeros[i] = int.Parse(Console.ReadLine()!);
 }
 
-for (int i = 0; i < notas.Length; i++)
+Console.WriteLine("\n\nNúmeros salvos:\n\n");
+
+foreach (var num in numeros)
 {
-    Console.WriteLine(notas[i]);
+    Console.WriteLine(num );
 }
 
-float soma = 0;
-foreach (float nota in notas)
+int totalPar = 0, maior = 0;
+
+for (int i = 0; i < numeros.Length; i++)
 {
-    soma += nota;
+    if (numeros[i] % 2 == 0)
+        totalPar++;
+
+    if(numeros[i] > maior)
+        maior = numeros[i];
 }
 
-double media = Math.Round(soma / notas.Length, 2);
-
-Console.WriteLine($"Media das notas: {media:F2}");
+Console.WriteLine($"Total de números pares: {totalPar}\nMaior número: {maior}");
