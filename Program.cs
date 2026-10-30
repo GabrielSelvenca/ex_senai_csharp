@@ -1,0 +1,166 @@
+﻿Console.Clear();
+
+// 1
+
+// string? nome, cidade, idade;
+// int idadeFormatada;
+
+// while (true)
+// {
+//     Console.WriteLine("Escreva seu nome: ");
+//     nome = Console.ReadLine();
+//     if (String.IsNullOrWhiteSpace(nome))
+//         continue;
+//     break;
+// }
+
+// while (true)
+// {
+//     Console.WriteLine("Escreva sua cidade: ");
+//     cidade = Console.ReadLine();
+//     if (String.IsNullOrWhiteSpace(cidade))
+//         continue;
+//     break;
+// }
+
+// while (true)
+// {
+//     Console.WriteLine("Escreva sua idade: ");
+//     idade = Console.ReadLine();
+//     if (String.IsNullOrWhiteSpace(idade))
+//         continue;
+
+//     if (!int.TryParse(idade, out idadeFormatada))
+//     {
+//         Console.WriteLine("Idade enviada não é número inteiro!");
+//         await Task.Delay(2500);
+//         continue;
+//     }
+//     break;
+// }
+
+// Console.WriteLine($"\n\n========= Suas Informações =========\nNome: {nome}\nCidade: {cidade}\nIdade: {idadeFormatada}");
+
+// string? nomeProduto;
+// int qtd;
+// decimal preco;
+
+// 2
+
+// Console.Write("Escreva o nome do produto: ");
+// nomeProduto = Console.ReadLine();
+
+// Console.Write("Escreva a quantidade do produto: ");
+// qtd = int.Parse(Console.ReadLine());
+
+// Console.Write("Escreva o preço unitário do produto: ");
+// preco = Convert.ToDecimal(Console.ReadLine());
+
+// decimal valorT = preco * qtd;
+
+// Console.WriteLine($"Nome do produto: {nomeProduto}\n\nQuantidade: {qtd}\n\nPreço unitário: {preco}\n\n\nValor Total: {valorT}");
+
+// string? nome;
+// float nota;
+
+// 3
+
+// Console.Write("Escreva o nome do aluno: ");
+// nome = Console.ReadLine();
+
+// Console.Write("Escreva a nota do aluno: ");
+// string notaString = Console.ReadLine();
+
+// if (float.TryParse(notaString, out nota))
+// {
+//     if (nota <= 10 && nota >= 0)
+//     {
+//         string resultado;
+//         if (nota >= 7) resultado = "Aprovado";
+//         else if (nota >= 5) resultado = "Recuperação";
+//         else resultado = "Reprovado";
+//         Console.WriteLine($"Nome do aluno: {nome}\nNota: {nota}\n\nAluno está: {resultado}");
+//         return;
+//     }
+// }
+// Console.WriteLine("Nota não é um valor correto!");
+
+// 4
+
+// int numInteiro = 0;
+
+// Console.Write("Escreva um número inteiro: ");
+// numInteiro = int.Parse(Console.ReadLine());
+
+// for (int i = 1; i <= 10; i++)
+// {
+//     Console.WriteLine($"{numInteiro} x {i} = {numInteiro * i}");
+// }
+
+// 5
+
+// int numSec = 53;
+// int tentativas = 0;
+
+// do
+// {
+//     Console.Write($"Quantidade de tentativas: {tentativas}\nEscolhe um número inteiro: ");
+//     int entrada = int.Parse(Console.ReadLine()!);
+
+//     Console.Clear();
+//     if (entrada == numSec) break;
+//     else if (entrada < numSec) Console.WriteLine("Numero digitado é menor que o número secreto");
+//     else if (entrada > numSec)  Console.WriteLine("Numero digitado é maior que o número secreto");
+//     tentativas++;
+// } while(true);
+
+// Console.WriteLine($"Parabéns você acertou o número: {numSec}\n\nQuantidade de tentativas: {tentativas}");
+
+// 6
+
+// int Somar(int a, int b)
+// {
+//     return a + b;
+// }
+
+// int Multiplicar(int a, int b)
+// {
+//     return a * b;
+// }
+
+// Console.Write("Escreva o primeiro número: ");
+// int a = int.Parse(Console.ReadLine()!);
+
+// Console.Write("Escreva o segundo número: ");
+// int b = int.Parse(Console.ReadLine()!);
+
+// int soma = Somar(a,b);
+// int multi = Multiplicar(a,b);
+
+// Console.WriteLine($"Soma = {soma}\nMultiplicação = {multi}");
+
+// 7
+
+// int[] notas = new int[3];
+
+// for (int i = 0; i < notas.Count(); i++)
+// {
+//     Console.Write($"Escreva a {i}ª nota: ");
+//     notas[i] = int.Parse(Console.ReadLine()!);
+// }
+
+// for (int i = 0; i < notas.Count(); i++)
+// {
+//     Console.WriteLine(notas[i]);
+// }
+
+// float media = 0;
+// int soma = 0;
+// foreach (int nota in notas)
+// {
+//     soma += nota;
+// }
+
+// media = soma / notas.Count();
+
+// Console.WriteLine($"Media das notas: {media}");
