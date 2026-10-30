@@ -141,26 +141,25 @@
 
 // 7
 
-// int[] notas = new int[3];
+float[] notas = new float[3];
 
-// for (int i = 0; i < notas.Count(); i++)
-// {
-//     Console.Write($"Escreva a {i}ª nota: ");
-//     notas[i] = int.Parse(Console.ReadLine()!);
-// }
+for (int i = 0; i < notas.Length; i++)
+{
+    Console.Write($"Escreva a {i}ª nota: ");
+    notas[i] = float.Parse(Console.ReadLine()!);
+}
 
-// for (int i = 0; i < notas.Count(); i++)
-// {
-//     Console.WriteLine(notas[i]);
-// }
+for (int i = 0; i < notas.Length; i++)
+{
+    Console.WriteLine(notas[i]);
+}
 
-// float media = 0;
-// int soma = 0;
-// foreach (int nota in notas)
-// {
-//     soma += nota;
-// }
+float soma = 0;
+foreach (float nota in notas)
+{
+    soma += nota;
+}
 
-// media = soma / notas.Count();
+double media = Math.Round(soma / notas.Length, 2);
 
-// Console.WriteLine($"Media das notas: {media}");
+Console.WriteLine($"Media das notas: {media:F2}");
